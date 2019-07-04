@@ -17,5 +17,10 @@ public class Task11_53b {
             if(arrayT[i]%2==0) arrayT[i]/=2;
             else arrayT[i]*=2;
         }
+        System.out.println("\tArray after replacement:");
+        for(int i=0;i<sizeArray;i++){
+            System.out.print(arrayT[i]+" ");
+        }
+        System.out.println();
         
 }
