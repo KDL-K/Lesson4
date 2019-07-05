@@ -1,17 +1,15 @@
 
 public class Task11_140 {
     public static void main(String[] args){
-        int coldTemp=0;
-        int coldTemp1=0;
-        int coldTemp2=0;
-        int coldDay=0;
+        float coldTemp1=0;
+        float coldTemp2=0;
         int coldDay1=0;
         int coldDay2=0;
         final int DAYS_IN_FEBRUARY=28;
-        int[] arrayF=new int[DAYS_IN_FEBRUARY];
+        float[] arrayF=new float[DAYS_IN_FEBRUARY];
 
         for(int i=0;i<DAYS_IN_FEBRUARY;i++){
-            arrayF[i]=(int)(Math.random()*25)*-1;
+            arrayF[i]=((float)((int)(Math.random()*25*10)))/10*-1;
         }
 
         System.out.println("\tTHE TEMPERATURE IN FEBRUARY:");
@@ -23,16 +21,19 @@ public class Task11_140 {
 
 
         for(int i=0;i<DAYS_IN_FEBRUARY;i++){
-            if(arrayF[i]<=coldTemp){
+            if(arrayF[i]<=coldTemp1){
+                coldTemp2=coldTemp1;
+                coldDay2=coldDay1;
                 coldTemp1=arrayF[i];
                 coldDay1=i+1;
-                coldTemp2=coldTemp;
-                coldDay2=coldDay;
-                coldTemp=arrayF[i];
-                coldDay=i+1;
             }
+            if(arrayF[i]<coldTemp2 && arrayF[i]>coldTemp1){
+                coldTemp2=arrayF[i];
+                coldDay2=i+1;
+            }
+
         }
 
-        System.out.printf("The lowest temperatures are on %d February %dC and %d February %dC",coldDay2, coldTemp2,coldDay1,coldTemp1); 
+        System.out.printf("The lowest temperatures are on %d February %.1fC and %d February %.1fC",coldDay1, coldTemp1,coldDay2,coldTemp2); 
     }
 }
