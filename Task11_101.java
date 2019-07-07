@@ -14,15 +14,17 @@ public class Task11_101 {
         }
         System.out.println();
         
-        int count;
+        int count=0;
         for(int i=0;i<sizeArray-1;i++){
             for(int j=i+1;j<sizeArray;j++){
                 if(arrayT[i]==arrayT[j]) count++;
             }
         }        
-        if(count==1) System.out.println("\Array has only 2 repeating numbers");
-        else if(count==0) System.out.println("\Array hasn't any repeating numbers");
-             else System.out.println("\Array has more than 2 repeating numbers");
+        if(count==1) System.out.println("Array has only 2 repeating numbers");
+        else if(count==0) System.out.println("Array hasn't any repeating numbers");
+             else System.out.println("Array has more than 2 repeating numbers");
+        in.close();
+    }
         
         
 }
