@@ -26,5 +26,6 @@ public class Task11_53c {
             System.out.print(arrayT[i]+" ");
         }
         System.out.println();
-        
+        in.close();
+    }  
 }
